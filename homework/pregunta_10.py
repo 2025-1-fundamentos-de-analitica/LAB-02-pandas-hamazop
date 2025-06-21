@@ -24,4 +24,6 @@ def pregunta_10():
 
     data_frame = pandas.read_csv("files/input/tbl0.tsv", sep = "\t")
 
+    data_frame = data_frame.sort_values( by = "c2" )
+
     return data_frame.groupby("c1")["c2"].apply(lambda x: ":".join(x.astype(str))).to_frame("c2")

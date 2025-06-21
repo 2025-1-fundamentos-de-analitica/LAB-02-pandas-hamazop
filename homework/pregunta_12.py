@@ -26,7 +26,7 @@ def pregunta_12():
 
     data_frame = pandas.read_csv("files/input/tbl2.tsv", sep = "\t")
 
-    data_frame["c5"] = data_frame["c5a"] + "," + data_frame["c5b"].astype(str)
+    data_frame["c5"] = data_frame["c5a"] + ":" + data_frame["c5b"].astype(str)
 
     data_frame = data_frame.groupby("c0")["c5"].apply(lambda x: ",".join(sorted(x.unique()))).reset_index()
 
