@@ -28,5 +28,3 @@ def pregunta_13():
     data_frame= pandas.merge(data_frame_0, data_frame_2, on="c0")
 
     return data_frame.groupby("c1")["c5b"].sum()
-
-print(pregunta_13())
